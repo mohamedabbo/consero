@@ -232,22 +232,25 @@ function uploadToAzureBlob($sasUrl, $filePath, $originalFileName) {
                     //print_r($analyze_fields);
 
                     //if (isset($analyze_fields['consero_date_1']['valueString'])) {
-                        $consero_date_1 = $analyze_fields['consero_date_1']['valueString'];
+                        $consero_date_1 = "'".$analyze_fields['consero_date_1']['valueString']."'";
                         $consero_invoice_no_1 = $analyze_fields['consero_invoice_no_1']['valueString'];
+                        $consero_invoice_no_1 = preg_replace('/\D/', '', $consero_invoice_no_1);
                         $consero_customer_name_1 = $analyze_fields['consero_customer_name_1']['valueString'];
                         $consero_sequence_1 = $analyze_fields['consero_sequence_1']['valueString'];
                         $consero_amount_1 = $analyze_fields['consero_amount_1']['valueString'];
                         $consero_cheque_no_1 = $analyze_fields['consero_cheque_no_1']['valueString'];
 
-                        $consero_date_2 = $analyze_fields['consero_date_2']['valueString'];
+                        $consero_date_2 = "'".$analyze_fields['consero_date_2']['valueString']."'";
                         $consero_invoice_no_2 = $analyze_fields['consero_invoice_no_2']['valueString'];
+                        $consero_invoice_no_2 = preg_replace('/\D/', '', $consero_invoice_no_2);
                         $consero_customer_name_2 = $analyze_fields['consero_customer_name_2']['valueString'];
                         $consero_sequence_2 = $analyze_fields['consero_sequence_2']['valueString'];
                         $consero_amount_2 = $analyze_fields['consero_amount_2']['valueString'];
                         $consero_cheque_no_2 = $analyze_fields['consero_cheque_no_2']['valueString'];
 
-                        $consero_date_3 = $analyze_fields['consero_date_3']['valueString'];
+                        $consero_date_3 = "'".$analyze_fields['consero_date_3']['valueString']."'";
                         $consero_invoice_no_3 = $analyze_fields['consero_invoice_no_3']['valueString'];
+                        $consero_invoice_no_3 = preg_replace('/\D/', '', $consero_invoice_no_3);
                         $consero_customer_name_3 = $analyze_fields['consero_customer_name_3']['valueString'];
                         $consero_sequence_3 = $analyze_fields['consero_sequence_3']['valueString'];
                         $consero_amount_3 = $analyze_fields['consero_amount_3']['valueString'];
