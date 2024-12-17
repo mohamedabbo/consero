@@ -261,32 +261,38 @@ function uploadToAzureBlob($sasUrl, $filePath, $originalFileName) {
                         //echo $consero_date_3.",".$consero_invoice_no_3.",".$consero_customer_name_3.",".$consero_sequence_3.",".$consero_amount_3.",".$consero_cheque_no_3;
 
                         // Write each group of data to the CSV
-                        fputcsv($output, [
-                            $consero_date_1,
-                            $consero_invoice_no_1,
-                            $consero_customer_name_1,
-                            $consero_sequence_1,
-                            $consero_amount_1,
-                            $consero_cheque_no_1
-                        ]);
+                        if(!empty($consero_customer_name_1)){
+                            fputcsv($output, [
+                                $consero_date_1,
+                                $consero_invoice_no_1,
+                                $consero_customer_name_1,
+                                $consero_sequence_1,
+                                $consero_amount_1,
+                                $consero_cheque_no_1
+                            ]);
+                        }
 
-                        fputcsv($output, [
-                            $consero_date_2,
-                            $consero_invoice_no_2,
-                            $consero_customer_name_2,
-                            $consero_sequence_2,
-                            $consero_amount_2,
-                            $consero_cheque_no_2
-                        ]);
+                        if(!empty($consero_customer_name_2)){
+                            fputcsv($output, [
+                                $consero_date_2,
+                                $consero_invoice_no_2,
+                                $consero_customer_name_2,
+                                $consero_sequence_2,
+                                $consero_amount_2,
+                                $consero_cheque_no_2
+                            ]);
+                        }
 
-                        fputcsv($output, [
-                            $consero_date_3,
-                            $consero_invoice_no_3,
-                            $consero_customer_name_3,
-                            $consero_sequence_3,
-                            $consero_amount_3,
-                            $consero_cheque_no_3
-                        ]);
+                        if(!empty($consero_customer_name_3)){
+                            fputcsv($output, [
+                                $consero_date_3,
+                                $consero_invoice_no_3,
+                                $consero_customer_name_3,
+                                $consero_sequence_3,
+                                $consero_amount_3,
+                                $consero_cheque_no_3
+                            ]);
+                        }
                 }
                 // Check the response
                 if ($httpCode == 202) {
