@@ -322,14 +322,14 @@ function uploadToAzureBlob($sasUrl, $filePath, $originalFileName) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Upload to Azure Blob</title>
+    <title>Consero Cheque Scanner</title>
 </head>
 <body>
-    <h1>Upload File to Azure Blob Storage</h1>
+    <h1>Consero Cheque Scanner</h1>
     <form action="" method="post" enctype="multipart/form-data">
-        <label for="file">Select a file:</label>
+        <label for="file">Select Cheque File</label>
         <input type="file" name="file" id="file" required>
-        <button type="submit">Upload</button>
+        <button type="submit">Create CSV</button>
     </form>
 </body>
 </html>
